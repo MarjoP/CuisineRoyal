@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Recipes_back.Data;
+using Recipes_back.Interfaces;
+using Recipes_back.Repo;
 
 namespace Recipes_back
 {
@@ -30,6 +32,7 @@ namespace Recipes_back
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
             services.AddControllers();
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddScoped<IRecipeRepository, RecipeRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
