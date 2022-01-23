@@ -14,7 +14,7 @@ namespace Recipes_back.Data
             _options = options;
         }
 
-        public DbSet<Models.Recipe> Recipes { get; set; } = default!;
+        public DbSet<Recipe> Recipes { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
