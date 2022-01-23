@@ -1,0 +1,41 @@
+<h4>Fill in the form to add a new Royal Recipe</h4>
+<div class="form-group">
+<form [formGroup] = "recipeForm" (ngSubmit) = "onSubmit()">
+    <div>
+        <label for ="Name">
+            Name
+        </label>
+        <input id="Name" type="text" formControlName="Name">
+    </div>
+    <div>
+        <label for ="Description">
+            Description
+        </label>
+        <textarea class="form-control" rows="3" cols="30" id="Description" type="text" formControlName="Description"></textarea>
+    </div>
+    <div>
+        <label for ="PrepTime">
+            Prepararion time in minutes
+        </label>
+        <input id="PrepTime" type="text" formControlName="PreparationTimeInMinutes">
+    </div>
+    <div>
+        <label for ="Instructions">
+            Instructions
+        </label>
+        <input id="Instructions" type="text" formControlName="Instructions">
+    </div>
+    <div>
+        <label for ="Instructions">
+            Instructions
+        </label>
+        <input id="Instructions" type="text" formControlName="Instructions">
+    </div>
+
+<button class="button" type="submit">Save Recipe</button>
+</form>
+</div>
+
+<app-recipe></app-recipe>
+
+
