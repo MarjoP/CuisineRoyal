@@ -1,25 +1,46 @@
 {
   "Recipes": [
-  {
-      "name": "Jauhelihakastike",
+    {
+      "id": 1,
+      "Name": "Jauhelihakastike",
       "Image": "",
       "Description": "Paras jauhelihakastike joka sopii erityisen hyvin spagetin tai ranskalaisten kanssa.",
       "PreparationTimeInMinutes": 20,
       "Instructions": "1. Paista jauheliha 2. Mausta lihaliemikuutiolla 3. Kaada ruokakerma sekaan, 4. Nauti spagetin kanssa.",
-      "Ingredients":
-      "400 g jauhelihaa, 2,5 dl Mustapekka pippurijuusto -ruokakerma,1 lihaliemikuutio",
-      "Tags": ["jauheliha", "arkiruoka"],
+      "Ingredients": "400 g jauhelihaa, 2,5 dl Mustapekka pippurijuusto -ruokakerma,1 lihaliemikuutio",
+      "Tags": [
+        "jauheliha",
+        "arkiruoka"
+      ],
       "DateAdded": "26.12.2021"
-  },
-  {
-      "name": "Jauhelihakastike2",
+    },
+    {
+      "id": 2,
+      "Name": "Jauhelihakastike2",
       "Image": "",
       "Description": "2. Paras jauhelihakastike joka sopii erityisen hyvin spagetin tai ranskalaisten kanssa.",
       "PreparationTimeInMinutes": 20,
       "Instructions": "1. Paista jauheliha 2. Mausta lihaliemikuutiolla 3. Kaada ruokakerma sekaan, 4. Nauti spagetin kanssa.",
-      "Ingredients":   "400 g jauhelihaa, 2,5 dl joku ,iiu -ruokakerma, 1 lihaliemikuutio",
-      "Tags": ["jauheliha", "arkiruoka"],
+      "Ingredients": "400 g jauhelihaa, 2,5 dl joku ,iiu -ruokakerma, 1 lihaliemikuutio",
+      "Tags": [
+        "jauheliha",
+        "arkiruoka"
+      ],
       "DateAdded": "26.12.2021"
-  }
+    },
+    {
+      "Name": "Riisipuuro",
+      "Image": "",
+      "Description": "Helppo uuniriisipuuro",
+      "PreparationTimeInMinutes": 90,
+      "Instructions": "Sekoita, uunita, syö",
+      "Ingredients": "vesi, maito, riisit",
+      "Tags": [
+        "kasvis",
+        "pääruoka"
+      ],
+      "DateAdded": "2022-01-29T11:53:49.961Z",
+      "id": 3
+    }
   ]
 }

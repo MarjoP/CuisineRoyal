@@ -15,4 +15,11 @@ export class RecipeService {
   getAllRecipes(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(this.url);
   }
+
+  addNewRecipe(newRecipe: Recipe): Observable<any> {
+    const headers = {'content-type': 'application/json'}
+    const body = JSON.stringify(newRecipe);
+    console.log("adding new recipe");
+    return this.http.post(this.url, body, {'headers': headers})
+  }
 }

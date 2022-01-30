@@ -1,0 +1,30 @@
+h4 {
+    margin: 20px 5px;
+}
+
+.form-group {
+    margin: 20px 5px;
+    border: solid #66030a 3px;
+    padding: 10px 5px;
+    width: 80%;
+    background-color:#80040c;
+    color:rgb(223, 207, 207);
+}
+
+.form-group div {
+    padding:5px;
+}
+
+label {
+    margin-right: 10px;
+}
+button {
+    margin:20px;
+}
+
+#Name {
+    width: 70%;
+}
+#PrepTime {
+    width: 60px;
+}

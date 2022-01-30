@@ -1,2 +1,2 @@
-<p>recipe-list works!</p>
-<app-recipe [Recipe] = "Recipe"></app-recipe>
+<app-recipe-preview *ngFor ="let recipe of Recipes" [Recipe] = "recipe"></app-recipe-preview>
+<app-recipe *ngFor ="let recipe of Recipes" [Recipe] = "recipe"></app-recipe>

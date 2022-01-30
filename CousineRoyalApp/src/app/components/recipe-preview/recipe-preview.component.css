@@ -1,0 +1,52 @@
+.recipe {
+    margin:30px 20px;
+    border: 1px solid #66030a;
+    border-radius:5px;
+    padding: 10px;
+    }
+    .heading {
+        font-size:36px;
+        color: #66030a;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        display: inline-block;
+    }
+    .tags {
+        display:flex; 
+        flex-wrap:nowrap;
+        margin-right:20px;
+    }
+    .tag {
+        border: solid 1px lightgrey;
+        background:rgb(221, 205, 205);
+        margin: 0 5px 5px 0;
+        padding: 3px;
+    }
+    .ingress {
+        font-size:20px;
+        margin-top:15px;
+    }
+    .flex {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        align-items:center;
+    }
+    .small {
+        font-size:14px;
+    }
+    h4 {
+        font-weight:600;
+    }
+
+    
+    @media only screen and (max-width:646px) {
+        .recipe {
+            margin:30px 10px;
+        }
+
+        .heading {
+            font-size:28px;
+        }
+
+    }

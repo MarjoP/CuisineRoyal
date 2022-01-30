@@ -1,11 +1,18 @@
-<h4>Fill in the form to add a new Royal Recipe</h4>
+<h4>Add new Royal Recipe</h4>
+
 <div class="form-group">
 <form [formGroup] = "recipeForm" (ngSubmit) = "onSubmit()">
     <div>
         <label for ="Name">
             Name
         </label>
-        <input id="Name" type="text" formControlName="Name">
+        <input id="Name" type="text" formControlName="Name" required>
+    </div>
+    <div>
+        <label for ="PrepTime">
+            Prepararion time in minutes
+        </label>
+        <input id="PrepTime" type="number" min="0" formControlName="PreparationTimeInMinutes">
     </div>
     <div>
         <label for ="Description">
@@ -14,28 +21,32 @@
         <textarea class="form-control" rows="3" cols="30" id="Description" type="text" formControlName="Description"></textarea>
     </div>
     <div>
-        <label for ="PrepTime">
-            Prepararion time in minutes
+        <label for ="Ingredients">
+            Ingredients
         </label>
-        <input id="PrepTime" type="text" formControlName="PreparationTimeInMinutes">
+        <textarea class="form-control" rows="6" cols="30" id="Ingredients" type="text" formControlName="Ingredients"></textarea>
     </div>
     <div>
         <label for ="Instructions">
             Instructions
         </label>
-        <input id="Instructions" type="text" formControlName="Instructions">
+        <textarea class="form-control" rows="10" cols="30" id="Instructions" type="text" formControlName="Instructions"></textarea>
     </div>
     <div>
-        <label for ="Instructions">
-            Instructions
+        <label for="Tags">
+            <br>
+            <span *ngFor = "let tag of TagList">
+            <input type = "checkbox" formControlName="Tags" 
+            (change)="onTagChange(tag.name, $event)"
+            name="tag.name" value="tag.value" id="tag.value">
+            {{tag.name}}
+            </span>
         </label>
-        <input id="Instructions" type="text" formControlName="Instructions">
     </div>
 
 <button class="button" type="submit">Save Recipe</button>
 </form>
 </div>
 
-<app-recipe></app-recipe>
 
 

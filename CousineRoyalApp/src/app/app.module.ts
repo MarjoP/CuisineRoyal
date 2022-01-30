@@ -7,13 +7,15 @@ import { AddNewRecipeFormComponent } from './components/add-new-recipe-form/add-
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RecipePreviewComponent } from './components/recipe-preview/recipe-preview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddNewRecipeFormComponent,
     RecipeComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    RecipePreviewComponent
   ],
   imports: [
     BrowserModule,

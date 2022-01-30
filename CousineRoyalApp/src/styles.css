@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-family: 'Tangerine', cursive;
+    font-size: 3.5rem;
+    margin: 30px 10px;
+    line-height:60px;
+}

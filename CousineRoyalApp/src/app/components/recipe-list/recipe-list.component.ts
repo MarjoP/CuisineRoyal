@@ -19,7 +19,7 @@ export class RecipeListComponent implements OnInit {
       data => {
         console.log(data);
         this.Recipes = data
-        this.Recipe = data[0];
+        this.Recipe = data[2];
         console.log(this.Recipe);
       }
     )
