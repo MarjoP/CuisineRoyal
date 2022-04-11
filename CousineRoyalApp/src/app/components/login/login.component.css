@@ -1,0 +1,13 @@
+label {
+    width:100px;
+}
+input {
+    width:200px;
+}
+div {
+    margin-top:10px;
+    margin-left:10px;
+}
+.button {
+    margin-top:10px;
+}

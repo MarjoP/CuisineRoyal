@@ -1,12 +1,15 @@
-<div class="recipe">
-    <div class="flex">
-        <h3 class="heading"> {{ Recipe.Name }}</h3>
+<div class="recipe card">
+    <div class="card-body">
+        <h3 class="card-title heading"> {{ Recipe.Name }}</h3>
         <div class="tags">
             <div *ngFor = "let tag of Recipe.Tags">
                 <span class="tag">{{tag}} </span>
             </div>
         </div>
+        <img class="card-img" src=""/>
+       
     </div>
-<p class="ingress"> {{ Recipe.Description }}</p>
-<p class="small"> Valmistusaika: {{ Recipe.PreparationTimeInMinutes }} min</p>
+    <p class="small card-footer"> Valmistusaika: {{ Recipe.PreparationTimeInMinutes }} min
+        <a href="#" routerLink="/recipe/{{Recipe.id}}" class="streched-link">xc</a>
+    </p>
 </div>

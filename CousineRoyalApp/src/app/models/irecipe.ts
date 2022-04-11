@@ -8,4 +8,5 @@ export interface IRecipe {
     Ingredients: string;
     Tags: string[];
     DateAdded: Date;
+    id?: number;
 }

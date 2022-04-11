@@ -8,6 +8,9 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RecipePreviewComponent } from './components/recipe-preview/recipe-preview.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { RecipePreviewComponent } from './components/recipe-preview/recipe-previ
     AddNewRecipeFormComponent,
     RecipeComponent,
     RecipeListComponent,
-    RecipePreviewComponent
+    RecipePreviewComponent,
+    HomeComponent,
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

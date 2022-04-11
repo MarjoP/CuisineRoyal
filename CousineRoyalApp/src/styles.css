@@ -12,3 +12,12 @@ h1 {
     margin: 30px 10px;
     line-height:60px;
 }
+
+a {
+    color: #66030a !important;
+    text-decoration: none;
+}
+.flex {
+    display:flex;
+    flex-wrap: wrap;
+}

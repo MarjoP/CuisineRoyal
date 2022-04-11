@@ -1,0 +1,21 @@
+.content {
+    margin: 20px;
+}
+
+.search {
+    justify-content: space-between;
+}
+
+.tags {
+    display:flex; 
+    flex-wrap:wrap;
+    margin-right:20px;
+    margin-top:10px;
+}
+
+.tag {
+    border: solid 1px lightgrey;
+    background:rgb(221, 205, 205);
+    margin: 0 10px 10px 0;
+    padding: 3px;
+}

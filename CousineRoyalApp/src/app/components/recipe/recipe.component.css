@@ -24,7 +24,7 @@ margin:30px 20px;
     display:flex;
     flex-wrap:wrap;
     justify-content: space-between;
-    align-items:center;
+    align-items: flex-start;
 }
 .small {
     font-size:14px;
@@ -35,6 +35,7 @@ h4 {
 .leftContent {
     border-right: 1px dashed #66030a;
     max-width:300px;
+    padding-rigth:20px;
 }
 
 .rightContent {

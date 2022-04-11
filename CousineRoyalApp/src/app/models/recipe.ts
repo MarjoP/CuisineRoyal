@@ -9,5 +9,5 @@ export class Recipe implements IRecipe {
     Ingredients = "";
     Tags = [];
     DateAdded: Date = new Date();
-
+    id? = undefined;
 }

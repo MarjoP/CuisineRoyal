@@ -1,6 +1,7 @@
-<h4>Add new Royal Recipe</h4>
+
 
 <div class="form-group">
+    <h4>Add new Royal Recipe</h4>
 <form [formGroup] = "recipeForm" (ngSubmit) = "onSubmit()">
     <div>
         <label for ="Name">
@@ -37,9 +38,9 @@
             <br>
             <span *ngFor = "let tag of TagList">
             <input type = "checkbox" formControlName="Tags" 
-            (change)="onTagChange(tag.name, $event)"
-            name="tag.name" value="tag.value" id="tag.value">
-            {{tag.name}}
+            (change)="onTagChange(tag, $event)"
+            name="tag" value="tag" id="tag">
+            {{tag}}
             </span>
         </label>
     </div>

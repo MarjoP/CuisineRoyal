@@ -21,14 +21,7 @@ export class AddNewRecipeFormComponent implements OnInit {
     Tags: ''
   });
 
-  TagList: any[] = [
-    {name:'liha', value:'liha'},
-    {name:'kala', value:'kala'},
-    {name: 'kasvis', value: 'kasvis'},
-    {name: 'pääruoka', value: 'pääruoka'},
-    {name: 'alkuruoka', value: 'alkuruoka'},
-    {name: 'jälkiruoka', value: 'jälkiruoka'}
-    ]
+  TagList: string[] = ["liha", "kala", "kasvis", "pääruoka", "alkuruoka", "jälkiruoka"];
  
     SelectedTags: string[] = [];
 
