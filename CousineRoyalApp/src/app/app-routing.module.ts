@@ -5,10 +5,11 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'add', component: AddNewRecipeFormComponent},
+  {path: 'add', component: AddNewRecipeFormComponent, canActivate:[AuthGuard]},
   {path: 'list', component: RecipeListComponent},
   {path: 'recipe/:id', component: RecipeComponent},
   {path: 'login', component: LoginComponent}

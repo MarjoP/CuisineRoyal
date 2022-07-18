@@ -10,5 +10,6 @@ namespace Recipes_back.Interfaces
         void AddRecipe(Recipe recipe);
         Task<Recipe> UpdateRecipe(Recipe recipe);
         void DeleteRecipe(Recipe recipe);
+        Task<Recipe> GetRecipeAsync(int id);
     }
 }

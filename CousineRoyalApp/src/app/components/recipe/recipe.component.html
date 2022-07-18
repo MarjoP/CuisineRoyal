@@ -1,6 +1,6 @@
-
+<button class="back-button" (click) = "goBack()">Takaisin resepteihin</button>
 <div class="recipe">
-    <img src="">
+    <img class="break" src="../../../assets/break2.png">
     <div class="flex">
         <h3 class="heading"> {{ Recipe.Name }}</h3>
         <div class="tags">
@@ -10,19 +10,19 @@
         </div>
     </div>
 <p class="ingress"> {{ Recipe.Description }}</p>
-<p class="small"> Valmistusaika: {{ Recipe.PreparationTimeInMinutes }} min</p>
+
 <div class="flex bg-col">
     <div class="leftContent">
         <h4>Ainekset (4 annosta)</h4>
-        <p>{{ Recipe.Ingredients }}</p>
+        <p [innerText]="Recipe.Ingredients"></p>
     </div>
    
     <div class=rightContent>
         <h4>Ohje</h4>
-        <p>{{ Recipe.Instructions }}</p>
+        <p [innerText]="Recipe.Instructions"></p>
     </div>
 </div>
-
+<p class="small"> Valmistusaika: {{ Recipe.PreparationTimeInMinutes }} min</p>
 </div>
 
 

@@ -3,7 +3,7 @@ import { Recipe } from 'src/app/models/recipe';
 import { IRecipe } from 'src/app/models/irecipe';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-recipe',
@@ -16,11 +16,13 @@ export class RecipeComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private RecipeService : RecipeService) {
+              private RecipeService : RecipeService,
+              private location : Location) {
 
    }
   
   ngOnInit(): void {
+
    let RecipeId = +this.route.snapshot.params['id'];
    console.log(RecipeId);
    this.RecipeService.getRecipe(RecipeId).subscribe(
@@ -29,6 +31,10 @@ export class RecipeComponent implements OnInit {
        this.Recipe=data;
      }
    )
+}
+
+goBack() {
+  this.location.back();
 }
 
 }

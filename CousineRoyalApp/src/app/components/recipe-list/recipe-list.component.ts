@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Recipe } from 'src/app/models/recipe';
 
@@ -7,28 +7,28 @@ import { Recipe } from 'src/app/models/recipe';
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css']
 })
-export class RecipeListComponent implements OnInit {
+export class RecipeListComponent implements OnInit, OnChanges {
 
   @Input() Quantity : number;
-
+  @Input() SelectedTags : string[];
+  @Input() SearchText : string = "";
   Recipes = Array<Recipe>();
-  Recipe = new Recipe();
+
   constructor(private RecipeService: RecipeService) {
     this.Quantity = 5;
+    this.SelectedTags=[];
    }
 
   ngOnInit(): void {
-
     this.RecipeService.getAllRecipes().subscribe(
       data => {
-        console.log(data);
-        this.Recipes = data
-        this.Recipe = data[2];
-        console.log(this.Recipe);
+        this.Recipes = data.sort((a,b) => {
+          return (new Date(b.DateAdded).getTime() - new Date(a.DateAdded).getTime());
+        });
       }
     )
-    
-   
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+}
 }

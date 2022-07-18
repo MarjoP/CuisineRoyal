@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Recipes_back.Interfaces;
@@ -11,10 +12,11 @@ using System.Threading.Tasks;
 namespace Recipes_back.Controllers
 {
     [ApiController]
-    [Route("api/")]
+    [Route("api/[controller]")]
     public class RecipeController : Controller
     {
         private readonly IRecipeRepository recipeRepository;
+       
         public RecipeController(IRecipeRepository repo)
         {
             recipeRepository = repo;
@@ -32,11 +34,25 @@ namespace Recipes_back.Controllers
             return Ok(recipes);
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("{id}")]
+        public async Task<IActionResult> GetRecipe (int id)
+        {
+            var recipe = await recipeRepository.GetRecipeAsync(id);
+            if(recipe == null)
+            {
+                return Ok("Recipe not found!");
+            }
+            return Ok(recipe);
+        }
+
      
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult AddNew(Recipe recipe)
+        //[ValidateAntiForgeryToken]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public ActionResult AddRecipe([FromBody] Recipe recipe)
         {
             var newRecipe = new Recipe();
             newRecipe.Name = recipe.Name;

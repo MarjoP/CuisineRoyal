@@ -11,6 +11,15 @@ import { RecipePreviewComponent } from './components/recipe-preview/recipe-previ
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SearchComponent } from './components/search/search.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
+
+
+export function tokenGetter() {
+  return localStorage.getItem("jwt");
+}
 
 @NgModule({
   declarations: [
@@ -21,16 +30,27 @@ import { LoginComponent } from './components/login/login.component';
     RecipePreviewComponent,
     HomeComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    FilterPipe,
+    SearchComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:44339"],
+        disallowedRoutes: []
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

@@ -1,15 +1,18 @@
+<a href="#" [routerLink]="['/recipe', Recipe.Id]" class="recipeLink">
 <div class="recipe card">
     <div class="card-body">
         <h3 class="card-title heading"> {{ Recipe.Name }}</h3>
         <div class="tags">
-            <div *ngFor = "let tag of Recipe.Tags">
+            <div *ngFor = "let tag of Tags">
                 <span class="tag">{{tag}} </span>
-            </div>
+            </div>  
         </div>
-        <img class="card-img" src=""/>
-       
+        <img *ngIf = "ImgPath ; else defaultImg" class="card-img" [src]="ImgPath"/>
+        
+        <ng-template #defaultImg><img class="card-img" src = "../../../assets/default.jpg"></ng-template>
     </div>
     <p class="small card-footer"> Valmistusaika: {{ Recipe.PreparationTimeInMinutes }} min
-        <a href="#" routerLink="/recipe/{{Recipe.id}}" class="streched-link">xc</a>
+        <!-- <a href="#" routerLink="/recipe/{{Recipe.id}}" class="streched-link">Link to Recipe</a> -->
     </p>
 </div>
+</a>

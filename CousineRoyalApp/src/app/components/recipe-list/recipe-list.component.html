@@ -1,4 +1,4 @@
 
 <div class="flex">
-<app-recipe-preview *ngFor ="let recipe of Recipes" [Recipe] = "recipe"></app-recipe-preview>
+<app-recipe-preview *ngFor ="let recipe of Recipes|filter:SelectedTags:'Tags' | searchFilter:SearchText" [Recipe] = "recipe"></app-recipe-preview>
 </div>

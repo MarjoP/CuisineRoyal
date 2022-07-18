@@ -19,6 +19,7 @@ namespace Recipes_back.Repo
         public void AddRecipe(Recipe recipe)
         {
             dbcontext.Recipes.Add(recipe);
+            dbcontext.SaveChanges();
         }
 
         public void DeleteRecipe(Recipe recipe)
@@ -34,6 +35,11 @@ namespace Recipes_back.Repo
         public Task<Recipe> UpdateRecipe(Recipe recipe)
         {
             throw new System.NotImplementedException();
+        }
+
+        public async Task<Recipe> GetRecipeAsync(int id)
+        {
+            return await dbcontext.Recipes.FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

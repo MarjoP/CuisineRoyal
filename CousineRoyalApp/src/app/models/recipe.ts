@@ -2,12 +2,12 @@ import { IRecipe } from "./irecipe";
 
 export class Recipe implements IRecipe {
     Name = "";
-    Image = "";
+    Image? = "";
     Description = "";
     PreparationTimeInMinutes = 0;
     Instructions = "";
     Ingredients = "";
-    Tags = [];
+    Tags = "";
     DateAdded: Date = new Date();
-    id? = undefined;
+    Id? = undefined;
 }

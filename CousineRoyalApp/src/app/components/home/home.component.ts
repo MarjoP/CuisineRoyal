@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -6,13 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   qty: number = 5;
-  TagList: string[] = ["liha", "kala", "kasvis", "pääruoka", "alkuruoka", "jälkiruoka"];
-    
+  TagList: string[] = ["liha", "kala", "kana", "kasvis", "pääruoka", "alkupala", "jälkiruoka"];
+  SelectedTags : string[]= [];  
+  SearchText : string = "";
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+  selectTag(tag:string) {
+    if(!this.SelectedTags.includes(tag)){
+      this.SelectedTags = [...this.SelectedTags, tag];
+    }
+    else {
+      this.SelectedTags=this.SelectedTags.filter(item => item !== tag);
+    }
+  }
+
+  setFilterText(filterText: string) {
+    this.SearchText=filterText;
+  }
 }

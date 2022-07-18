@@ -1,18 +1,21 @@
 
 <div class="content">
+    <h2>5 tähden Royal-reseptit</h2>
 <div class="search flex">
-    <div>Järjestä lisäyspäivämäärän mukaan tai aakkosjärjestykseen</div>
-    <div class="ml-auto">Haku kenttä</div>
+<br><br>
+    <div class="ml-auto">
+        <app-search (SearchText)="setFilterText($event)"></app-search>
+    </div>
 </div>
 <div class="flex tags">
 <div *ngFor = "let tag of TagList">
-    <button class="tag btn">{{ tag }}</button>
+    <button [ngClass]="SelectedTags.includes(tag) ? 'selected' : '' " class="tag btn" (click)="selectTag(tag)">{{ tag }}</button>
 </div>
 </div>
 
-<h3>"Listaus jossa 5-10 randomia reseptiä</h3>
-<app-recipe-list [Quantity] ="qty"></app-recipe-list>
-<h3>Näytä lisää-nappi</h3> 
+
+<app-recipe-list [Quantity] ="qty" [SelectedTags] = "SelectedTags" [SearchText]="SearchText"></app-recipe-list>
+
 
     
 </div>

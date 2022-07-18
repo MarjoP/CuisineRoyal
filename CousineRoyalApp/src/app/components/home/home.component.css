@@ -1,5 +1,9 @@
 .content {
-    margin: 20px;
+    padding: 20px;
+    background-color: rgb(251, 251, 251);
+}
+h2 {
+    margin-left:20px;
 }
 
 .search {
@@ -11,11 +15,29 @@
     flex-wrap:wrap;
     margin-right:20px;
     margin-top:10px;
+    margin-left:20px;
 }
 
 .tag {
-    border: solid 1px lightgrey;
-    background:rgb(221, 205, 205);
+    border: solid 1px lightgray;
     margin: 0 10px 10px 0;
-    padding: 3px;
+    padding: 4px;
+    color:black;
+    background:rgb(248, 190, 44);
+}
+
+.tag:hover {
+    background:orange;
+}
+
+.selected {
+    background:orange;
+}
+
+
+@media only screen and (max-width:646px) {
+    .content {
+        padding: 20px 5px 20px 12px;
+    }
+
 }

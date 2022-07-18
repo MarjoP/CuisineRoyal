@@ -5,8 +5,9 @@
   </div>
 
   <div class="row right">
-    <a class="navItem" *ngIf="loggedIn" href="#" routerLink="/add">Add</a>
-    <a class="navItem" href="#" routerLink="/">Home</a>
-    <a class="navItem" href="#" routerLink="/login">Login</a>
+    <a class="navItem" *ngIf="loggedIn()" href="#" routerLink="/add">Lisää</a>
+    <a class="navItem" href="#" routerLink="/">Etusivu</a>
+    <a *ngIf = "!loggedIn(); else logout" class="navItem" href="#" routerLink="/login">Kirjaudu</a>
+    <ng-template #logout><a class="navItem" href="" type="button" (click)="logOut()">Log out</a></ng-template>
   </div>
 </div>

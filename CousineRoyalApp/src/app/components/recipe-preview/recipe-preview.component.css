@@ -1,51 +1,81 @@
 .recipe {
-    margin:30px 5px 30px 20px;
-    border: 1px solid #66030a;
-    border-radius:5px;
+    margin:30px 10px 30px 20px;
+    border: 4px solid black;
+    border-radius:0px;
    
     display:inline-block;
+    box-shadow: 11px 11px 5px rgb(153, 180, 189);
+    }
+
+    .recipeLink {
+        color:black; 
+    }
+    .recipeLink:hover {
+        color:black;
+    }
+
+    .recipeLink:hover > .recipe {
+        border: 4px solid goldenrod;
+    }
+
+    .card {
+        width:285px;
+        height: 380px;
+    }
+    .card-body {
+     position:relative;   
+     height:90%;
+     background-color:#4c0612;
     }
     
     .heading {
-        font-size:24px;
+        font-size:18px;
         font-weight:700;
-        color: #66030a;
+         color: rgb(244, 195, 71); 
+        /* color:rgb(228, 208, 55); */
         overflow-wrap: break-word;
         word-wrap: break-word;
-        display: inline-block;
+        text-align: center;
     }
     .tags {
         display:flex; 
         flex-wrap:nowrap;
         margin-right:20px;
+        position: relative;
+        bottom: -40px;
     }
     .tag {
-        border: solid 1px lightgrey;
-        background:rgb(221, 205, 205);
+         border: solid 1px #e1e8c3; 
         margin: 0 5px 5px 0;
         padding: 3px;
+        color:black;
+        background:#e8e5e6;
     }
     .card-img {
         width:250px;
         height:150px;
         margin-top:10px;
+        position:absolute;
+        bottom:25px;
+        object-fit: cover;
     }
-    a.stretched-link::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        pointer-events: auto;
-        content: "";
-        background-color: rgba(0,0,0,0);
+
+    .card-title {
+        height: 50px;
     }
+  
     .flex {
         display:flex;
         flex-wrap:wrap;
         justify-content: space-between;
         align-items:center;
+    }
+
+    .card-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #e8e5e6;
     }
     .small {
         font-size:14px;
@@ -55,14 +85,4 @@
         font-weight:600;
     }
 
-    
-    @media only screen and (max-width:646px) {
-        .recipe {
-            margin:30px 10px;
-        }
-
-        .heading {
-            font-size:28px;
-        }
-
-    }
+   
