@@ -4,6 +4,7 @@ import { IRecipe } from 'src/app/models/irecipe';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Location } from '@angular/common';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-recipe',
@@ -17,7 +18,8 @@ export class RecipeComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private RecipeService : RecipeService,
-              private location : Location) {
+              private location : Location,
+              private jwtHelper: JwtHelperService) {
 
    }
   
@@ -35,6 +37,14 @@ export class RecipeComponent implements OnInit {
 
 goBack() {
   this.location.back();
+}
+
+loggedIn = () : boolean => {
+  const token = localStorage.getItem("jwt");
+  if (token && !this.jwtHelper.isTokenExpired(token)){
+    return true;
+  }
+  return false;
 }
 
 }

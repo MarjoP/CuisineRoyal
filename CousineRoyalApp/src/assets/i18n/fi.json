@@ -1,0 +1,16 @@
+{
+    "Welcome to Cuisine Royal": "Tervetuloa Cuisine Royaliin",
+    "Add recipe": "Lisää resepti",
+    "Home": "Etusivu",
+    "Log in": "Kirjaudu",
+    "Log out": "Kirjaudu ulos",
+    "5 Star Royal Recipes": "5 tähden Royal-reseptit",
+    "Search recipe": "Hae reseptiä",
+    "meat": "liha", 
+    "fish": "kala", 
+    "chicken": "kana", 
+    "vegetarian": "kasvis", 
+    "main": "pääruoka", 
+    "starter": "alkupala", 
+    "desert": "jälkiruoka"
+}

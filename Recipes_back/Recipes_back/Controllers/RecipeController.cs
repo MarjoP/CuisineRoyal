@@ -73,7 +73,16 @@ namespace Recipes_back.Controllers
                 return BadRequest("Something went wrong, not able to save the recipe");  
             }
 
-            return Ok($"new recipe '{recipe.Name}' added");
+            return Ok(newRecipe);
+        }
+
+        [HttpPut]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Route("update/{id}")]
+        public IActionResult UpdateRecipe([FromBody] Recipe recipe)
+        {
+            recipeRepository.UpdateRecipe(recipe);
+            return Ok(recipe);
         }
 
     }

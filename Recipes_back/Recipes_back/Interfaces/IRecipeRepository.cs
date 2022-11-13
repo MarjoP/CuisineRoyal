@@ -8,7 +8,7 @@ namespace Recipes_back.Interfaces
     {
         Task<IEnumerable<Recipe>> GetRecipesAsync();
         void AddRecipe(Recipe recipe);
-        Task<Recipe> UpdateRecipe(Recipe recipe);
+        void UpdateRecipe(Recipe recipe);
         void DeleteRecipe(Recipe recipe);
         Task<Recipe> GetRecipeAsync(int id);
     }

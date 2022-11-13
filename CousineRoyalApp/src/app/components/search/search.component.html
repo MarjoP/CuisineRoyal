@@ -1,5 +1,5 @@
 
 <div>
-    Hae reseptiä
-    <input (keyup) = "changeText($event)" [(ngModel)] ="query" >
+    <label for="searchInput">{{ 'Search recipe' | translate }}</label>
+    <input id="searchInput" (keyup) = "changeText($event)" [(ngModel)] ="query" >
 </div>

@@ -32,9 +32,10 @@ namespace Recipes_back.Repo
             return await dbcontext.Recipes.ToListAsync();
         }
 
-        public Task<Recipe> UpdateRecipe(Recipe recipe)
+        public void UpdateRecipe(Recipe recipe)
         {
-            throw new System.NotImplementedException();
+            dbcontext.Entry(recipe).State = EntityState.Modified;
+            dbcontext.SaveChanges();
         }
 
         public async Task<Recipe> GetRecipeAsync(int id)

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   qty: number = 5;
-  TagList: string[] = ["liha", "kala", "kana", "kasvis", "pääruoka", "alkupala", "jälkiruoka"];
+  TagList: string[] = ["meat", "fish", "chicken", "vegetarian", "main", "starter", "desert"];
   SelectedTags : string[]= [];  
   SearchText : string = "";
 

@@ -1,0 +1,63 @@
+
+
+<div class="form-group">
+    <h4>Muokkaa Royal-reseptiä</h4>
+<form [formGroup] = "recipeForm" (ngSubmit) = "onSubmit()">
+    <div>
+        <label for ="Name">
+            Nimi
+        </label>
+        <input id="Name" type="text" formControlName="Name" required>
+    </div>
+    <div>
+        <label for ="PrepTime">
+            Valmistusaika minuutteina
+        </label>
+        <input id="PrepTime" type="number" min="0" step="5" formControlName="PreparationTimeInMinutes">
+    </div>
+    <div>
+        <label for ="Description">
+            Lyhyt kuvaus
+        </label>
+        <textarea class="form-control" rows="3" cols="30" id="Description" type="text" formControlName="Description"></textarea>
+    </div>
+    <div>
+        <label for ="Ingredients">
+            Ainekset (4 annosta)
+        </label>
+        <textarea class="form-control" rows="10" cols="30" id="Ingredients" type="text" formControlName="Ingredients"
+        placeholder="1 kpl xxx &#10;100g xxx &#10;... "></textarea>
+    </div>
+    <div>
+        <label for ="Instructions">
+            Valmistusohjeet
+        </label>
+        <textarea class="form-control" rows="10" cols="30" id="Instructions" type="text" formControlName="Instructions"
+        placeholder="1. Pilko xxx &#10;2. Paista xxx &#10;... "></textarea>
+    </div>
+    <div>
+        <label for="Tags">
+            <br>
+            <span *ngFor = "let tag of TagList">
+                <input type = "checkbox" 
+                (change)="onTagChange(tag, $event)"
+                name="tag" value="tag" id="tag"
+                [checked]="SelectedTags.includes(tag)">
+                {{tag}}
+                {{SelectedTags.includes(tag)}}
+            </span>
+        </label>
+    </div>
+    <div>
+        <input class="form-control upload" #imageInput
+        type="file" accept="image/*"
+        (change)="onFileAdded(imageInput)" formControlName="Image">
+    </div>
+
+<button class="button" type="submit">Tallenna muutokset</button>
+</form>
+</div>
+
+
+
+

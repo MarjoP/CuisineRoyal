@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http'; 
 import { map, Observable } from 'rxjs';
 import { Recipe } from '../models/recipe';
+import { IRecipe } from '../models/irecipe';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,12 @@ export class RecipeService {
 
   getRecipe(id: number): Observable<Recipe> {
     return this.http.get<Recipe>(this.url+"/"+id);
+  }
+
+  updateRecipe(updatedRecipe: IRecipe, id: any) :Observable<any> {
+    const headers = {'content-type': 'application/json', responseType:'text'}
+    const body = JSON.stringify(updatedRecipe);
+
+    return this.http.put(this.url+"/update/"+id, body , {'headers': headers})
   }
 }

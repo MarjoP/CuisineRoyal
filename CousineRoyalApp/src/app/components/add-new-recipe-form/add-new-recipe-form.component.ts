@@ -1,5 +1,5 @@
 import { HttpResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map, Observable, ReplaySubject } from 'rxjs';
@@ -93,7 +93,7 @@ export class AddNewRecipeFormComponent implements OnInit {
     this.newRecipe.PreparationTimeInMinutes = this.recipeForm.controls["PreparationTimeInMinutes"].value;
     this.newRecipe.Instructions = this.recipeForm.controls["Instructions"].value;
     this.newRecipe.Ingredients = this.recipeForm.controls["Ingredients"].value;
-    this.newRecipe.Tags = this.recipeForm.controls["Tags"].value.join(", ");
+    this.newRecipe.Tags = this.recipeForm.controls["Tags"].value.join(",");
 
   }
 

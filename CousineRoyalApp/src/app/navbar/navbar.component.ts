@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
@@ -7,6 +7,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  @Output() SelectedLanguage = new EventEmitter<string>();
 
   constructor(private jwtHelper: JwtHelperService) { }
 
@@ -25,6 +27,10 @@ export class NavbarComponent implements OnInit {
   logOut = (): void => {
     console.log("removing jwt");
     localStorage.removeItem("jwt");
+  }
+
+  setLanguage(selectedLanguage: string) {
+    this.SelectedLanguage.emit(selectedLanguage);
   }
   
 }

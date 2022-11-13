@@ -1,6 +1,17 @@
-.back-button {
-    margin-left:20px;
-    margin-top:20px;
+.top-button {
+    margin: 20px;
+}
+
+.top-button:hover {
+    background-color: #66030a;
+    color:rgb(251, 243, 193);
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .recipe {

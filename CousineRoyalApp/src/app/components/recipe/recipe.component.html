@@ -1,4 +1,9 @@
-<button class="back-button" (click) = "goBack()">Takaisin resepteihin</button>
+<div class="buttons">
+<button class="top-button" (click) = "goBack()">Takaisin resepteihin</button>
+<a class="edit-link" *ngIf = "loggedIn()" 
+routerLink="/edit/{{ Recipe.Id }}" [queryParams]="{recipeToEdit:Recipe | json }">
+<button class="top-button">Muokkaa reseptiä</button></a>
+</div>
 <div class="recipe">
     <img class="break" src="../../../assets/break2.png">
     <div class="flex">
