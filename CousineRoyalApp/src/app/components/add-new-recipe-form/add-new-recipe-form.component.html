@@ -1,7 +1,7 @@
 
-
+<h2 class="h2header">Lisää uusi Royal-resepti</h2>
 <div class="form-group">
-    <h4>Lisää uusi Royal-resepti</h4>
+    
 <form [formGroup] = "recipeForm" (ngSubmit) = "onSubmit()">
     <div>
         <label for ="Name">
@@ -42,14 +42,24 @@
                 <input type = "checkbox" formControlName="Tags" 
                 (change)="onTagChange(tag, $event)"
                 name="tag" value="tag" id="tag">
-                {{tag}}
+                {{ tag | translate }}
             </span>
         </label>
     </div>
     <div>
-        <input class="form-control upload" #imageInput
+        <input class="form-control upload file-input" #imageInput
         type="file" accept="image/*"
-        (change)="onFileAdded(imageInput)" formControlName="Image">
+        (change)="onFileAdded(imageInput)" #fileUpload formControlName="Image">
+
+        <div class="file-upload">
+
+            {{ filename || "No file uploaded yet."}}
+         
+             <button mat-mini-fab color="primary" class="upload-btn"
+               (click)="fileUpload.click()">
+                 Lisää kuva
+             </button>
+         </div>
     </div>
 
 <button class="button" type="submit">Tallenna resepti</button>

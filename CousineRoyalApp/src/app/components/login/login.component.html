@@ -1,15 +1,16 @@
+<h2 class="h2header">{{ 'Please, login to add new recipes' | translate }}</h2>
 <div class="form-group">
     <form [formGroup]="loginForm" (ngSubmit) = "onSubmit()">
         <div>
-            <label for="userName">User name</label>
+            <label for="userName">{{ 'Username' | translate }}</label>
             <input id="userName" type="text" formControlName="userName" required>
         </div>
         <div>
-            <label for="Password">Password</label>
-            <input id="userName" type="password" formControlName="Password" required>
+            <label for="Password">{{ 'Password' | translate }}</label>
+            <input id="Password" type="password" formControlName="Password" required>
         </div>
         <div>      
-            <button class="button" type="submit">Login</button>
+            <button class="button" type="submit">{{'Login' | translate }}</button>
         </div>
     </form>
 </div>

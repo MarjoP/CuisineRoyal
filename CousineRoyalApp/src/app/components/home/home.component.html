@@ -1,12 +1,15 @@
 
 <div class="content">
+    <div class="search flex">
+        <br><br>
+            <div class="ml-auto">
+                <app-search (SearchText)="setFilterText($event)"></app-search>
+            </div>
+        </div>
+    <img class="stars" src="../../../assets/5-stars.png">
+
     <h2>{{ '5 Star Royal Recipes' | translate }}</h2>
-<div class="search flex">
-<br><br>
-    <div class="ml-auto">
-        <app-search (SearchText)="setFilterText($event)"></app-search>
-    </div>
-</div>
+
 <div class="flex tags">
 <div *ngFor = "let tag of TagList">
     <button [ngClass]="SelectedTags.includes(tag) ? 'selected' : '' " class="tag btn" (click)="selectTag(tag)">{{ tag | translate }}</button>

@@ -28,8 +28,9 @@ export class AddNewRecipeFormComponent implements OnInit {
   });
 
   base64textString = "";
+  filename = "";
 
-  TagList: string[] = ["liha", "kala", "kana", "kasvis", "pääruoka", "alkupala", "jälkiruoka"];
+  TagList: string[] = ["meat", "fish", "chicken", "vegetarian", "main", "starter", "desert"];
 
   SelectedTags: string[] = [];
 
@@ -49,7 +50,6 @@ export class AddNewRecipeFormComponent implements OnInit {
     this.recipeService.addNewRecipe(this.newRecipe)
     .subscribe({
       next: (() => {
-
         this.recipeForm.reset();
         this.router.navigate(['/']);
     }),
@@ -60,6 +60,7 @@ export class AddNewRecipeFormComponent implements OnInit {
 
   onFileAdded(imageInput:any) {
     const file : File = imageInput.files[0];
+    this.filename = file.name;
     this.convertFile(imageInput.files[0]).subscribe(base64 => {
       this.base64textString = base64;
       console.log(base64);

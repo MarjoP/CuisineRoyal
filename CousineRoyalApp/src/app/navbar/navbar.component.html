@@ -1,4 +1,4 @@
-<div class="nav">
+<section class="navSection"><div class="nav">
   
   <div class="left">
     <a class="" href="#"><h1>{{ 'Welcome to Cuisine Royal' | translate }}</h1></a>
@@ -8,10 +8,11 @@
     <button class="button" (click)="setLanguage('en')">en</button>
   </div>
 
-  <div class="row right">
-    <a class="navItem" href="#" routerLink="/">{{ 'Home' | translate }}</a>
-    <a class="navItem" *ngIf="loggedIn()" href="#" routerLink="/add">{{ 'Add recipe' | translate }}</a>
-    <a *ngIf = "!loggedIn(); else logout" class="navItem" href="#" routerLink="/login">{{ 'Log in' | translate }}</a>
-    <ng-template #logout><a class="navItem" href="" type="button" (click)="logOut()">{{ 'Log out' | translate}}</a></ng-template>
-  </div>
 </div>
+<div class="row left navlinks">
+  <a class="navItem" href="#" routerLink="/">{{ 'Home' | translate }}</a>
+  <a class="navItem" *ngIf="loggedIn()" href="#" routerLink="/add">{{ 'Add recipe' | translate }}</a>
+  <a *ngIf = "!loggedIn(); else logout" class="navItem" href="#" routerLink="/login">{{ 'Log in' | translate }}</a>
+  <ng-template #logout><a class="navItem" href="" type="button" (click)="logOut()">{{ 'Log out' | translate}}</a></ng-template>
+</div>
+</section>

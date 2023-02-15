@@ -22,11 +22,12 @@ export class AccountService {
     this.http.post<AuthenticatedResponse>(url, body, {'headers': this.headers})
     .subscribe({
       next:(res:AuthenticatedResponse) => {
-      this.createSession(res.Token.toString());
-      this.invalidLogin = false;
-      this.router.navigate(["/"]);
-      return true;
-    }, error: error => {
+        this.createSession(res.Token.toString());
+        this.invalidLogin = false;
+        this.router.navigate(["/"]);
+        return true;
+    }, 
+      error: error => {
       this.invalidLogin = true;
       console.log("error: ", error);
     

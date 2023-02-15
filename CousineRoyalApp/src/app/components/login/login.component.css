@@ -1,8 +1,23 @@
+
+.form-group {
+    width: 260px;
+    margin:auto;
+    margin-top:50px;
+    color:goldenrod;
+    background:rgb(8, 8, 4);
+}
+form {
+    border:solid 1px gold;
+    padding:20px;
+}
 label {
     width:100px;
 }
 input {
     width:200px;
+}
+input:focus-visible {
+outline:goldenrod;
 }
 div {
     margin-top:10px;

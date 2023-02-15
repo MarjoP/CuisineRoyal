@@ -6,16 +6,17 @@ h4 {
 
 .form-group {
     margin: 30px auto;
-    border: solid rgb(117, 16, 52) 2px;
+    border: solid rgb(117, 16, 52) 5px;
     border-radius:5px;
-    padding: 10px 10px;
+    padding: 20px;
     width: 80%;
-    background-color:#e1e1dd;
-    color:rgb(29, 11, 11);
+    background-color:rgb(88, 24, 56);
+    color:rgb(214, 187, 35);
 }
 
 .form-group div {
     padding:5px;
+    margin-top:10px;
 }
 
 label {
@@ -33,4 +34,8 @@ button {
 }
 #PrepTime {
     width: 60px;
+}
+
+.file-input {
+    display:none;
 }
